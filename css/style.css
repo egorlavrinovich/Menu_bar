@@ -1,0 +1,109 @@
+*{padding: 0;margin: 0;border: 0;}*
+*{font-family: Georgia, 'Times New Roman', Times, serif;}*
+*{font-size: 16px;}*
+
+.container{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.menu{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 0 0 1% 0;
+}
+.hobb{
+    grid-column: 1/2;
+}
+.hobb:hover{
+    background-color: aquamarine
+}
+.Proj{
+    grid-column: 2/3;
+}
+.Proj:hover{
+    background-color: aquamarine
+}
+.Aboutme{
+    grid-column: 3/4;
+}
+.Aboutme:hover{
+    background-color: aquamarine
+}
+.container_image{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% minmax(400px,auto) 10%;
+    grid-template-rows: repeat(3,minmax(200px,auto));
+}
+.Projects_container{
+    display: none;
+}
+.hobbies_container{
+    display: none;
+}
+.hobbies_container.active{
+    grid-column: 2/3;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); /*Строим нашу сетку для элементов в виде колонок (auto-fit помогает задать динамическое кол-во) */
+}
+.hobbies_image{
+    position: relative;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template: 1fr 1fr 1fr / 1fr;
+}
+.Detailed{
+    grid-row:3/4;
+    height: 40px;
+    background-color: aquamarine;
+    text-decoration: none;
+    padding: 0 20px;
+    justify-self: start;
+    line-height: 35px;
+    border-radius: 50%;
+}
+.Detailed:active{
+    background-color: red;
+    text-decoration: none;
+    padding: 0 20px;
+    justify-self: start; /* Делаем наш grid строчным (Кнопку, чтобы область занимаемая ей не была во всю ширину) */
+    line-height: 35px;
+    border-radius: 50%;
+}
+.text{
+    grid-row:2/3;
+}
+.hobbies_image img{
+    grid-row: 1/2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Projects_container.active{
+    grid-column:  2/3;
+    grid-row: 1/2;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+.projects_image{
+   position: relative;
+   padding: 0 0 85% 0;
+}
+.projects_image img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
